@@ -6,6 +6,7 @@ using RefugioMimi.Models;
 namespace RefugioMimi.Controllers.Admin;
 
 [Area("Admin")]
+[Route("Admin/[controller]")]
 public class ReservasController : Controller
 {
     private readonly ApplicationDbContext _context;
@@ -14,7 +15,7 @@ public class ReservasController : Controller
     {
         _context = context;
     }
-
+    [HttpGet("")]
     public async Task<IActionResult> Index()
     {
         var reservas = await _context.Reservas.ToListAsync();

@@ -4,9 +4,9 @@ namespace RefugioMimi.Controllers;
 
 public class HomeController : Controller
 {
+    [Route("")]
     public IActionResult Index() => View();
 
-    public IActionResult Galeria() => View();
-
+    [Route("/home/sobre")]
     public IActionResult Sobre() => View();
 }

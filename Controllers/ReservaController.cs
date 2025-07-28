@@ -21,6 +21,7 @@ public class ReservaController : Controller
     }
 
     [HttpGet]
+    [Route("reservar")]
     public IActionResult Index()
     {
         return View();
@@ -70,6 +71,7 @@ public class ReservaController : Controller
     }
 
     [HttpGet]
+    [Route("reservar/confirmacao")]
     public async Task<IActionResult> Confirmacao(string sessionId)
     {
         var reserva = await _context.Reservas.FirstOrDefaultAsync(r => r.StripePaymentId == sessionId);
