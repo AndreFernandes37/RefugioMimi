@@ -10,4 +10,7 @@
     <PackageReference Include="Stripe.net" Version="42.21.0" />
     <PackageReference Include="MailKit" Version="4.1.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+  </ItemGroup>
 </Project>
