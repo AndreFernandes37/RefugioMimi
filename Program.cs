@@ -17,6 +17,14 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
 
+// aplica migrações pendentes e cria a base de dados
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    db.Database.Migrate();
+}
+
+
 StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
 if (!app.Environment.IsDevelopment())
