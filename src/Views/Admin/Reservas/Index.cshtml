@@ -1,0 +1,35 @@
+@model IEnumerable<RefugioMimi.Models.Reserva>
+@{
+    ViewData["Title"] = "Reservas";
+}
+<h2>Reservas</h2>
+<a class="btn btn-secondary mb-2" asp-action="Exportar">Exportar CSV</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var r in Model) {
+        <tr>
+            <td>@r.Nome</td>
+            <td>@r.Email</td>
+            <td>@r.DataEntrada:d</td>
+            <td>@r.DataSaida:d</td>
+            <td>@r.Estado</td>
+            <td>
+                <form asp-action="AlterarEstado" method="post">
+                    <input type="hidden" name="id" value="@r.Id" />
+                    <button class="btn btn-sm btn-primary" type="submit">Toggle</button>
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
