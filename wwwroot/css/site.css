@@ -1,0 +1,15 @@
+body {
+    background-color: #FAF9F7;
+    color: #333;
+}
+.navbar-light {
+    background-color: #EDE6DB;
+}
+.btn-primary {
+    background-color: #A9B0A2;
+    border-color: #A9B0A2;
+}
+.btn-primary:hover {
+    background-color: #B4C2B0;
+    border-color: #B4C2B0;
+}
