@@ -5,7 +5,16 @@ Site de reservas em ASP.NET Core 8.0 com integração Stripe e MySQL.
 ## Desenvolvimento
 
 1. Configure `appsettings.json` com a ligação MySQL e chaves Stripe.
+
 2. Inicie a aplicação (a base de dados e as migrações são aplicadas automaticamente):
+  Execute as migrações:
+
+```bash
+dotnet ef migrations add Init
+dotnet ef database update
+```
+
+3. Inicie a aplicação:
 
 ```bash
 dotnet run

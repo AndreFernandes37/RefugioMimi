@@ -24,6 +24,7 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
+
 StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
 if (!app.Environment.IsDevelopment())
